@@ -1,0 +1,61 @@
+﻿@model WorldLiteratureLib.ViewModels.RegisterModel
+@{ 
+    ViewData["Title"] = "Регистрация";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Register" asp-controller="Account" asp-antiforgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div class="form-group">
+            <label asp-for="Email">Введите Email</label> <br />
+            <input type="text" asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserName">Скажите как вас зовут</label> <br />
+            <input type="text" asp-for="UserName" />
+            <span asp-validation-for="UserName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber">Введите номер телефона</label> <br />
+            <input type="text" asp-for="PhoneNumber" />
+            <span asp-validation-for="PhoneNumber"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="WebPage">Ссылка на социальные сети</label> <br />
+            <input type="text" asp-for="WebPage" />
+            <span asp-validation-for="WebPage"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Введите пароль</label> <br />
+            <input type="password" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmPassword">Подтвердите пароль</label> <br />
+            <input asp-for="ConfirmPassword" />
+            <span asp-validation-for="ConfirmPassword"></span>
+        </div>
+        <!--  <div class="form-group">
+        <label asp-for="Photo">Загрузите ваше фото</label> <br />
+        <input type="file" class="form-control-file" id="exampleFormControlFile1" asp-for="Photo">
+        <span asp-validation-for="Photo"></span>
+    </div>-->
+        <form enctype="multipart/form-data" method="post">
+            <dl>
+                <dt>
+                    <label asp-for="Photo"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Photo" type="file">
+                    <span asp-validation-for="Photo"></span>
+                </dd>
+            </dl>
+            <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
+        </form>
+        <div>
+            <input type="submit" value="Регистрация" class="btn btn-outline-dark" />
+        </div>
+    </div>
+</form>

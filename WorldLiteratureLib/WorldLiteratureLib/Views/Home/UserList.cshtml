@@ -1,0 +1,34 @@
+﻿@using WorldLiteratureLib.Models
+@using WorldLiteratureLib.ViewModels
+@model UserViewModel
+@{
+    ViewData["Title"] = "UserList";
+}
+
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th width="100" scope="col">#</th>
+            <th width="100" scope="col">Имя</th>
+            <th width="100" scope="col">Почта</th>
+            <th width="100" scope="col">Соцсети</th>
+            <th width="100" scope="col">Номер телефона</th>
+            <th width="100" scope="col">В чёрном списке</th>
+            <th width="100" scope="col">Фото</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (User users in Model.Users)
+        {
+            <tr>
+                <th height="100" scope="row">@users.Id</th>
+                <td>@users.UserName</td>
+                <td>@users.Email</td>
+                <td>@users.WebPage</td>
+                <td>@users.PhoneNumber</td>
+                <td>@users.BlackList</td>
+                <td>@users.Photo</td>
+            </tr>
+        }
+    </tbody>
+</table>

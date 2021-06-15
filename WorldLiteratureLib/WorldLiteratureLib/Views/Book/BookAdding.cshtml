@@ -1,0 +1,35 @@
+﻿@model WorldLiteratureLib.ViewModels.BookAddModel
+@{ 
+    ViewData["Title"] = "Заполните информацию о книге";
+}
+<h1>@ViewData["Title"]</h1>
+
+<a asp-action="BookAdding" asp-controller="Book">Заполните информацию о книге</a>
+
+<form asp-action="BookAdding" asp-controller="Book" asp-antiforgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-group">
+        <label asp-for="Author">Введите автора</label> <br />
+        <input type="text" asp-for="Author" />
+        <span asp-validation-for="Author"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BookName">Введите название</label> <br />
+        <input type="text" asp-for="BookName" />
+        <span asp-validation-for="BookName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Введите описание</label> <br />
+        <input type="text" asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InStock">Сколько поступило</label> <br />
+        <input type ="text" asp-for="InStock" />
+        <span asp-validation-for="InStock"></span>
+    </div>
+    <div>
+        <input type="submit" value="Добавить" class="btn btn-outline-dark" />
+    </div>
+</form>

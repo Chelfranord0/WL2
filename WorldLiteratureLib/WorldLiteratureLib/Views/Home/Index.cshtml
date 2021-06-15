@@ -1,0 +1,42 @@
+﻿@using WorldLiteratureLib.Models
+@using WorldLiteratureLib.ViewModels
+@model BookViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+​<picture class="">
+    <source srcset="~/Files/Library.png" type="image/svg+xml">
+    <img src="~/Files/Library.png" class="img-fluid img-thumbnail" alt="...">
+</picture>
+
+<table class="table table-bordered table-dark" width="1034">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Автор</th>
+            <th scope="col">Название</th>
+            <th scope="col">Описание</th>
+            <th scope="col">На складе</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Book book in Model.Books)
+        {
+            <tr>
+                <th scope="row">@book.Book_Id</th>
+                <td>@book.Author</td>
+                <td>@book.BookName</td>
+                <td>@book.Description</td>
+                <td>@book.InStock</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form asp-action="BookAdding" asp-controller="Book">
+    <button class="btn btn-light">BookAdding</button>
+</form>
+
+<form asp-action="UserList" asp-controller="Home">
+    <button class="btn btn-light">UserList</button>
+</form>

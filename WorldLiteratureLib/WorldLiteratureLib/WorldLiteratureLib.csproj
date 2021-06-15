@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-WorldLiteratureLib-73FE6587-D2DA-4C2F-B816-6D0A638DFB7D</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210525141943_init1.cs" />
+    <Compile Remove="Migrations\20210525141943_init1.Designer.cs" />
+    <Compile Remove="Migrations\20210525164323_init2.cs" />
+    <Compile Remove="Migrations\20210525164323_init2.Designer.cs" />
+    <Compile Remove="Migrations\20210525164634_init1.cs" />
+    <Compile Remove="Migrations\20210525164634_init1.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8" />
+  </ItemGroup>
+
+</Project>
