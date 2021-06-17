@@ -39,8 +39,9 @@ namespace WorldLiteratureLib.Controllers
         public IActionResult UserList()
         {
             var model = new UserViewModel();
-            model.Users = db.Users.ToList();            
+            model.Users = db.Users.ToList(); //model.Users = db.Users.Where(X => X.Email == "" )            
             return View(model);
+
             //return Content("Вход только для администратора");
         }
 

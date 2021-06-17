@@ -4,7 +4,7 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<form asp-action="Register" asp-controller="Account" asp-antiforgery="true">
+<form asp-action="Register" asp-controller="Account" asp-antiforgery="true" enctype="multipart/form-data">
     <div class="validation" asp-validation-summary="ModelOnly"></div>
     <div>
         <div class="form-group">
@@ -37,23 +37,12 @@
             <input asp-for="ConfirmPassword" />
             <span asp-validation-for="ConfirmPassword"></span>
         </div>
-        <!--  <div class="form-group">
-        <label asp-for="Photo">Загрузите ваше фото</label> <br />
-        <input type="file" class="form-control-file" id="exampleFormControlFile1" asp-for="Photo">
-        <span asp-validation-for="Photo"></span>
-    </div>-->
-        <form enctype="multipart/form-data" method="post">
-            <dl>
-                <dt>
-                    <label asp-for="Photo"></label>
-                </dt>
-                <dd>
-                    <input asp-for="Photo" type="file">
-                    <span asp-validation-for="Photo"></span>
-                </dd>
-            </dl>
-            <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
-        </form>
+        <div class="form-group">
+            <label asp-for="Photo">Загрузите ваше фото</label> <br />
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" asp-for="Photo">
+            <span asp-validation-for="Photo"></span>
+        </div>
+
         <div>
             <input type="submit" value="Регистрация" class="btn btn-outline-dark" />
         </div>
